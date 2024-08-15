@@ -1,12 +1,19 @@
 'use strict'
 
 class Billing {
-  amount = 2
+  #amount = 100
+  calculateTotal() {
+    return this.#amount
+  }
 }
 
 class FixedBilling extends Billing {
   calculateTotal() {
     return this.amount
+  }
+  constructor(billing) {
+    super()
+    this.amount = billing.amount
   }
 }
 
