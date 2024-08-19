@@ -9,11 +9,7 @@ class Billing {
 
 class FixedBilling extends Billing {
   calculateTotal() {
-    return this.amount
-  }
-  constructor(billing) {
-    super()
-    this.amount = billing.amount
+    return super.calculateTotal()
   }
 }
 
@@ -22,9 +18,9 @@ class HourBilling extends Billing {
     super()
     this.hours = hours
   }
-
+  
   calculateTotal() {
-    return this.amount * this.hours
+    return this.hours * super.calculateTotal()
   }
 }
 
@@ -35,7 +31,7 @@ class ItemBilling extends Billing {
   }
 
   calculateTotal() {
-    return this.amount * this.items
+    return this.items * super.calculateTotal()
   }
 }
 
